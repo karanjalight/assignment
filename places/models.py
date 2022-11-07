@@ -14,6 +14,7 @@ from django.contrib.auth import get_user_model
 
 class park(models.Model):
   id = models.IntegerField(primary_key=True)
+  slug = models.CharField(max_length= 100, null=False, blank=True)
   park_name = models.CharField(max_length=50) 
   image = models.ImageField(upload_to ='uploads/')
   description = models.CharField(max_length=300) 
@@ -24,6 +25,7 @@ class park(models.Model):
 
 class water(models.Model):
   id = models.IntegerField(primary_key=True)
+  slug = models.CharField(max_length= 100, null=False, blank=True)
   water_name = models.CharField(max_length=50) 
   image = models.ImageField(upload_to ='uploads/')
   description = models.CharField(max_length=300) 
@@ -34,6 +36,7 @@ class water(models.Model):
 
 class trail(models.Model):
   id = models.IntegerField(primary_key=True)
+  slug = models.CharField(max_length= 100, null=False, blank=True)
   trail_name = models.CharField(max_length=50) 
   image = models.ImageField(upload_to ='uploads/')
   description = models.CharField(max_length=300) 

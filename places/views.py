@@ -50,13 +50,27 @@ def Signup(request):
 
 
 
-class parks(DetailView):
-    # specify the model to use
-    model = park
 
-class park(View):
-    def get(self, request, *args, **kwargs):
-        
-        context = {'park': park}
-        return render(request, 'parkdetail.html', context)
+
+def park(request):
+
+  park = park.objects.all()
+  
+
+  return render(request, 'parkdetail.html' , context)
+
+
+""" def parkview(request, slug):
+  if(park.objects.filter(slug=slug)):
+    products = park.objects.filter(slug=slug)
+    
+    context= {
+      'products':products, 
+      
+    }
+
+    return render(request, 'parkdetail.html' , context )"""
+ 
+
+
 

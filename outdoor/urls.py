@@ -25,8 +25,10 @@ urlpatterns = [
 
     path('', views.home, name="home"),
     path('contact',views.contact,name="contact"),
+
+
+    path('park/', views.park, name='parkview'),
     
-    path('<int:pk>/', views.park.as_view(), name='detail'),
     
     path('places/',include('places.urls')),
     path('admin/', admin.site.urls),
